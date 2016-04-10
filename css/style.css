@@ -115,6 +115,7 @@ a {
 .white-text {
   font-weight: bold;
   color: #fff;
+  padding-left: 80px;
 }
 
 .gray {
@@ -135,7 +136,7 @@ a {
 .flex-box {
   display: -webkit-flex;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 10px;

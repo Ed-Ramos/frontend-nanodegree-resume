@@ -132,7 +132,7 @@ var bio =
 
     },
 
-    "skills": ["programmer","python"]
+    "skills": ["programmer"," python"]
 
 
 }
@@ -193,4 +193,41 @@ var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
 
+if (bio.skills.length > 0) {
+
+$("#header").append(HTMLskillsStart);
+
+/*var formattedSkill = HTMLskills.replace("%data%",bio.skills[0]);
+$("#skills").append(formattedSkill);
+formattedSkill = HTMLskills.replace("%data%",bio.skills[1]);
+$("#skills").append(formattedSkill);
+
+*/
+
+for (var i=0; i<bio.skills.length; i++){
+
+   var formattedSkill = HTMLskills.replace("%data%",bio.skills[i]);
+   $("#skills").append(formattedSkill);
+}
+
+
+
+//console.log(work.jobs[0].employer);
+
+for (job in work.job){
+
+
+$("#workExperience").append(HTMLworkStart);
+var formattedworkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+var formattedworkTitle = HTMLTitle.replace("%data%", work.jobs[job].title);
+var formattedworkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+var formattedworkDates = HTMLworkDates.replace("%data%", work.job[job].dates);
+var formattedworkDescription = HTMLworkDescription.replace("%data%", work.job[job].description);
+
+}
+
+
+
+
+}
 
