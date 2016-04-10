@@ -132,7 +132,7 @@ var bio =
 
     },
 
-    "skills": ["programmer"," python"]
+    "skills": ["HTML", "CSS" , "Python", "JavaScript"]
 
 
 }
@@ -214,15 +214,20 @@ for (var i=0; i<bio.skills.length; i++){
 
 //console.log(work.jobs[0].employer);
 
-for (job in work.job){
-
+for (job in work.jobs){
 
 $("#workExperience").append(HTMLworkStart);
 var formattedworkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-var formattedworkTitle = HTMLTitle.replace("%data%", work.jobs[job].title);
+var formattedworkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+var employerInfo = formattedworkEmployer + formattedworkTitle;
 var formattedworkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-var formattedworkDates = HTMLworkDates.replace("%data%", work.job[job].dates);
-var formattedworkDescription = HTMLworkDescription.replace("%data%", work.job[job].description);
+var formattedworkDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+var formattedworkDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+
+$(".work-entry:last").append(employerInfo);
+$(".work-entry:last").append(formattedworkLocation);
+$(".work-entry:last").append(formattedworkDates);
+$(".work-entry:last").append(formattedworkDescription);
 
 }
 
