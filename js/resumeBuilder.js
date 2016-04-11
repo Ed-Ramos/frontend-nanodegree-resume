@@ -100,7 +100,7 @@ var projects =
     "title": "Portfolio",
     "dates": "2016",
     "description": " Porfolio page using HTML and CSS",
-    "images": [ "images/test1.jpeg", "images/test2.jpeg"]
+    "images": ["images/197x148.gif", "images/197x148.gif"]
 
   },
 
@@ -108,7 +108,7 @@ var projects =
     "title": "online Resume",
     "dates": "2016",
     "description": " online resume using javascript and Jquery",
-    "images": [ "images/test3.jpeg", "images/test4.jpeg"]
+    "images": ["images/197x148.gif", "images/197x148.gif"]
 
   }
 
@@ -255,19 +255,25 @@ projects.display = function()
   for (project in projects.projects)
   {
 
-  $("#projects").append(HTMLprojectStart);
+     $("#projects").append(HTMLprojectStart);
 
-  var formattedprojectTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
-  var formattedprojectDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
-  var formattedprojectDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+     var formattedprojectTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+     $(".project-entry:last").append(formattedprojectTitle);
+     var formattedprojectDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+     $(".project-entry:last").append(formattedprojectDates);
+     var formattedprojectDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+     $(".project-entry:last").append(formattedprojectDescription);
 
-  //var formattedprojectImage = HTMLprojectImage.replace("%data%", projects.projects[project].images);
+     if (projects.projects[project].images.length > 0){
 
+        for (image in projects.projects[project].images){
 
-  $(".project-entry:last").append(formattedprojectTitle);
-  $(".project-entry:last").append(formattedprojectDates);
-  $(".project-entry:last").append(formattedprojectDescription);
-  //$(".projects-entry:last").append(formattedprojectImage);
+     	var formattedprojectImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+        $(".project-entry:last").append(formattedprojectImage);
+     }
+
+  }
+
 
   }
 
