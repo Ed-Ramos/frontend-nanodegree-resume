@@ -70,7 +70,7 @@ var work =
 
 	"employer": "ATT",
 	"title": "Network Design Engineer",
-	"location": "orlando, FL",
+	"location": "Orlando, Florida, USA",
 	"dates": "2000-present",
 	"description": "Design and plan Transport"
 
@@ -80,7 +80,7 @@ var work =
 
     "employer": "Air Force",
 	"title": "Electronics Engineer",
-	"location": "Melbourne, FL",
+	"location": "Melbourne, Florida, USA",
 	"dates": "1996-2001",
 	"description": " Design communications projects"
 
@@ -105,7 +105,7 @@ var projects =
   },
 
   {
-    "title": "online Resume",
+    "title": "Online Resume",
     "dates": "2016",
     "description": " online resume using javascript and Jquery",
     "images": ["images/197x148.gif", "images/197x148.gif"]
@@ -128,11 +128,13 @@ var bio =
       "mobile": "407-325-6187",
       "email": "ER3718@ATT.COM",
       "github": "Ed-Ramos",
-      "location": "Orlando, FL"
+      "location": "Orlando, Florida, USA"
 
     },
 
-    "skills": ["HTML", "CSS" , "Python", "JavaScript"]
+    "skills": ["HTML", "CSS" , "Python", "JavaScript"],
+
+    "biopic": "images/fry.jpg"
 
 
 }
@@ -190,8 +192,14 @@ var education =
 
 var formattedName = HTMLheaderName.replace("%data%",bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+var formattedbioPic = HTMLbioPic.replace("%data%", bio.biopic);
+var formattedwelcomeMsg = HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage);
+
+$("#header").prepend(formattedwelcomeMsg);
+$("#header").prepend(formattedbioPic);
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
+
 
 if (bio.skills.length > 0)
 {
@@ -282,4 +290,4 @@ projects.display = function()
 projects.display();
 
 
-
+$("#mapDiv").append(googleMap);
