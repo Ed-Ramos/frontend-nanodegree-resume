@@ -1,65 +1,3 @@
-/*
-This is empty on purpose! Your code to build the resume will go here.
- */
-
- /*var name = "Edwin Ramos";
- var role = "Web Developer"
- var contactinfo= "test"
- var pictureurl = "images/fry.jpeg"
- var welcomemessage="welcome to lesson"
- var skills = ["programmer", "developer","python"]
-
- var formattedName = HTMLheaderName.replace("%data%", name);
- var formattedRole = HTMLheaderRole.replace("%data%", role);
-
- */
-
- /*var skills = ["programmer", "developer", "python"];
-
- var bio = {
-
-   "name" : "Edwin Ramos",
-   "role": "Web Developer",
-   "contacts": {
-   	"Mobile" : "321-325-6187",
-   	"Email" : "ER3718@ATT.com",
-   	"github" : "Ed-Ramos",
-   	"Location" : "Orlando"
-   },
-
-   "welcomemessage" : "Welcome to my Resume",
-   "skills": ["programmer ", "developer ", "python"],
-   "biopic": "images/fry.jpg"
- }
-
-/*bio.city = "orlando"*/
-/*
- $("#header").prepend(formattedRole);
- $("#header").prepend(formattedName);
-
-
- $("#main").append(bio.name);
-
-/*$("#main").append(bio.city);
-
-var work = {};
-
-work.position = "Network Design Engineer";
-work.employer = "ATT";
-work.years = 15;
-work.Location = "Lake Mary";
-
-/*var education = {};
-
-education["name"] = "Stony Brook University";
-education["years"] = "1983-1988";
-education["city"] = "Stony Brook, NY";
-
- $("#main").append(work["position"]);
- $("#main").append(education.name);
-
-*/
-
 
 var work =
 {
@@ -86,136 +24,12 @@ var work =
 
     }
 
-  ]
+  ],
 
-}
 
-var projects =
-{
-
-	"projects": [
+  "display": function()
 
   {
-
-    "title": "Portfolio",
-    "dates": "2016",
-    "description": " Porfolio page using HTML and CSS",
-    "images": ["images/197x148.gif", "images/197x148.gif"]
-
-  },
-
-  {
-    "title": "Online Resume",
-    "dates": "2016",
-    "description": " online resume using javascript and Jquery",
-    "images": ["images/197x148.gif", "images/197x148.gif"]
-
-  }
-
- ]
-
-}
-
-
-
-var bio =
-{
-
-	"name": "Edwin Ramos",
-	"role": "Web Developer",
-	"welcomeMessage": " welcome to my resume project",
-	"contacts": {
-      "mobile": "407-325-6187",
-      "email": "ER3718@ATT.COM",
-      "github": "Ed-Ramos",
-      "location": "Orlando, Florida, USA"
-
-    },
-
-    "skills": ["HTML", "CSS" , "Python", "JavaScript"],
-
-    "biopic": "images/fry.jpg"
-
-
-}
-
-
-
-var education =
- {
-
-    "schools":  [{
-        	"name": "Stony Brook University",
-  	        "Location": "Stony Brook, NY",
-  	        "degree": "BS",
-  	        "majors": ["Electrical Engineering"],
-  	        "dates" :1988
-        },
-
-        {
-  	        "name": "Syracuse University",
-  	        "Location": "Syracuse, NY",
-  	        "degree": "MS",
-  	        "majors": ["Electrical Engineering"],
-  	        "dates":1995
-        },
-
-        {
-  	        "name": "University Of Florida",
-  	        "Location": "Gainesville, FL",
-  	        "degree": "MBA",
-  	        "majors": ["Business Administration"],
-  	        "dates":2004
-        }
-
-   ],
-
-    "onlineCourses": [{
-    	"title": "JavaScript Basics",
-  	    "school": "Udacity",
-  	    "dates": 2016,
-  	    "url": "placeholder"
-
-      },
-
-      {
-        "title": "JavaScript Basics",
-  	    "school": "Udacity",
-  	    "dates": 2016,
-  	    "url": "placeholder"
-
-      }
-
-   ]
-}
-
-
-var formattedName = HTMLheaderName.replace("%data%",bio.name);
-var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-var formattedbioPic = HTMLbioPic.replace("%data%", bio.biopic);
-var formattedwelcomeMsg = HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage);
-
-$("#header").prepend(formattedwelcomeMsg);
-$("#header").prepend(formattedbioPic);
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-
-
-if (bio.skills.length > 0)
-{
-
-  $("#header").append(HTMLskillsStart);
-
-  for (var i=0; i<bio.skills.length; i++){
-
-   var formattedSkill = HTMLskills.replace("%data%",bio.skills[i]);
-   $("#skills").append(formattedSkill);
-  }
-
-}
-
-function displayWork()
-{
 
   for (job in work.jobs)
   {
@@ -235,30 +49,38 @@ function displayWork()
 
   }
 
-}
-
-displayWork();
-
-
-/*function inName(name){
-
-nameArray=name.trim().split(" ");
-console.log(nameArray);
-
- return( nameArray[0].toLowerCase()+nameArray[1].toUppperCase());
+  }
 
 }
 
-$("#main").append(internationalizeButton);
 
-inName(bio.name);
-
-*/
-
-
-projects.display = function()
-
+var projects =
 {
+
+	"projects": [
+
+     {
+
+       "title": "Portfolio",
+       "dates": "2016",
+       "description": " Porfolio page using HTML and CSS",
+       "images": ["images/197x148.gif", "images/197x148.gif"]
+
+     },
+
+     {
+       "title": "Online Resume",
+       "dates": "2016",
+       "description": " online resume using javascript and Jquery",
+       "images": ["images/197x148.gif", "images/197x148.gif"]
+
+     }
+
+    ],
+
+    "display": function()
+
+    {
 
   for (project in projects.projects)
   {
@@ -285,7 +107,183 @@ projects.display = function()
 
   }
 
+ }
+
+
 }
+
+
+
+var bio =
+{
+
+	"name": "Edwin Ramos",
+	"role": "Web Developer",
+	"welcomeMessage": " welcome to my resume project",
+	"contacts": {
+      "mobile": "407-325-6187",
+      "email": "ER3718@ATT.COM",
+      "github": "Ed-Ramos",
+      "location": "Orlando, Florida, USA"
+
+    },
+
+    "skills": ["HTML", "CSS" , "Python", "JavaScript"],
+
+    "biopic": "images/fry.jpg",
+
+    "display":function()
+
+    {
+     var formattedName = HTMLheaderName.replace("%data%",bio.name);
+     var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+     var formattedbioPic = HTMLbioPic.replace("%data%", bio.biopic);
+     var formattedwelcomeMsg = HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage);
+
+     $("#header").prepend(formattedwelcomeMsg);
+     $("#header").prepend(formattedbioPic);
+     $("#header").prepend(formattedRole);
+     $("#header").prepend(formattedName);
+
+
+     if (bio.skills.length > 0)
+     {
+
+       $("#header").append(HTMLskillsStart);
+
+       for (var i=0; i<bio.skills.length; i++){
+
+        var formattedSkill = HTMLskills.replace("%data%",bio.skills[i]);
+        $("#skills").append(formattedSkill);
+       }
+
+    }
+
+
+
+    }
+
+
+}
+
+
+
+var education =
+ {
+
+    "schools":  [{
+        	"name": "Stony Brook University",
+  	        "location": "Stony Brook, NY",
+  	        "degree": "Bachelors",
+  	        "majors": ["Electrical Engineering"],
+  	        "dates" :"1988"
+        },
+
+        {
+  	        "name": "Syracuse University",
+  	        "location": "Syracuse, NY",
+  	        "degree": "Masters",
+  	        "majors": ["Electrical Engineering"],
+  	        "dates":"1995"
+        },
+
+        {
+  	        "name": "University Of Florida",
+  	        "location": "Gainesville, FL",
+  	        "degree": "Masters",
+  	        "majors": ["Business Administration"],
+  	        "dates":"2004"
+        }
+
+   ],
+
+    "onlineCourses": [{
+    	"title": "JavaScript Basics",
+  	    "school": "Udacity",
+  	    "dates": "2016",
+  	    "url": "placeholder"
+
+      },
+
+      {
+        "title": "JavaScript Basics",
+  	    "school": "Udacity",
+  	    "dates": "2016",
+  	    "url": "placeholder"
+
+      }
+
+   ],
+
+
+    "display": function()
+
+    {
+
+      for (school in education.schools)
+      {
+
+         $("#education").append(HTMLschoolStart);
+         var formattedschoolName = HTMLschoolName.replace("%data%",education.schools[school].name);
+         var formattedschoolDegree = HTMLschoolDegree.replace("%data%",education.schools[school].degree);
+         var schoolInfo = formattedschoolName + formattedschoolDegree;
+         $(".education-entry:last").append(schoolInfo);
+         var formattedschoolDates = HTMLschoolDates.replace("%data%",education.schools[school].dates);
+         $(".education-entry:last").append(formattedschoolDates);
+         var formattedschoolLocation = HTMLschoolLocation.replace("%data%",education.schools[school].location);
+         $(".education-entry:last").append(formattedschoolLocation);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      }
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+}
+
+
+
+/*function inName(name){
+
+nameArray=name.trim().split(" ");
+console.log(nameArray);
+
+ return( nameArray[0].toLowerCase()+nameArray[1].toUppperCase());
+
+}
+
+$("#main").append(internationalizeButton);
+
+inName(bio.name);
+
+*/
+
+education.display();
+
+bio.display();
+
+work.display();
 
 projects.display();
 
