@@ -119,7 +119,7 @@ var bio =
 
 	"name": "Edwin Ramos",
 	"role": "Web Developer",
-	"welcomeMessage": " welcome to my resume project",
+	"welcomeMessage": " Welcome to my Front-End Web Developer Resume project.  During this project i learned JavaScript and Jquery",
 	"contacts": {
       "mobile": "407-325-6187",
       "email": "ER3718@ATT.COM",
@@ -139,11 +139,23 @@ var bio =
      var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
      var formattedbioPic = HTMLbioPic.replace("%data%", bio.biopic);
      var formattedwelcomeMsg = HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage);
+     var formattedHTMLmobile = HTMLmobile.replace("%data%",bio.contacts.mobile);
+     var formattedHTMLemail = HTMLemail.replace("%data%",bio.contacts.email);
+     var formattedHTMLgithub = HTMLgithub.replace("%data%",bio.contacts.github);
+     var formattedHTMLlocation = HTMLlocation.replace("%data%",bio.contacts.location);
 
-     $("#header").prepend(formattedwelcomeMsg);
-     $("#header").prepend(formattedbioPic);
+
+     //$("#topContacts").append(formattedHTMLmobile,formattedHTMLemail,formattedHTMLgithub,formattedHTMLlocation);
+
      $("#header").prepend(formattedRole);
      $("#header").prepend(formattedName);
+     $("#topContacts").prepend(formattedHTMLlocation);
+     $("#topContacts").prepend(formattedHTMLgithub);
+     $("#topContacts").prepend(formattedHTMLemail);
+     $("#topContacts").prepend(formattedHTMLmobile);
+     $("#header").append(formattedbioPic);
+     $("#header").append(formattedwelcomeMsg);
+
 
 
      if (bio.skills.length > 0)
@@ -158,6 +170,14 @@ var bio =
        }
 
     }
+
+
+    //$("#topContacts").prepend(formattedHTMLmobile);
+
+    $("#footerContacts").append(formattedHTMLmobile);
+    $("#footerContacts").append(formattedHTMLemail);
+    $("#footerContacts").append(formattedHTMLgithub);
+    $("#footerContacts").append(formattedHTMLlocation);
 
 
 
