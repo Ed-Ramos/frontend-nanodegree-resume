@@ -9,18 +9,19 @@ var work =
 	"employer": "ATT",
 	"title": "Network Design Engineer",
 	"location": "Orlando, Florida, USA",
-	"dates": "2000-present",
-	"description": "Design and plan Transport"
+	"dates": "2008-present",
+	"description": "Responsible for all Ethernet and DS3 and above transport requirements to support all carrier launches, BTS and RNC rehomes, EVC upspeeds, 4G LTE, and optimization work.Design all Ethernet Collectors, DS3 and OCn circuits in granite.  Troubleshoot as needed. Initiate all mobility provisioning orders and track to completion.Work with Layer 3 on all CBB circuits. Responsible for MTSO access and final connectivity.  Partner with Capacity Planning on developing 0-2 year TFORCE circuit forecast.Manage the implementation of all new transport infrastructure needed to support TFORCE forecast.  Develop transport plans for DAS and RNC rehomes.Manage and monitor capacity of transport related equipment (DCS, ADM, etc.) ensuring capacity is used cost effectively.  Perform trend analysis and efficiently deploy and use the network inventory in the 0-12 month timeframe.  Minimize capital expenses by issuing transport grooming plans and eqpt redeployment plans. esponsible for proper network diversity to increase reliability and minimize outages.Responsible for representing the SouthEast Region in the development of various Job Aids.Designated Subject Matter Expert (SME) for SouthEast Layer 0/1 Capacity Management."
+
 
     },
 
     {
 
-    "employer": "Air Force",
-	"title": "Electronics Engineer",
-	"location": "Melbourne, Florida, USA",
-	"dates": "1996-2001",
-	"description": " Design communications projects"
+    "employer": "ATT",
+	"title": "Transport Engineer",
+	"location": "Orlando, Florida, USA",
+	"dates": "2004-2008",
+	"description": " Lead Engineer on the NFL transport optimization and savings projects. Obtained over $10 million in transport savings over 3 years.Ownership of all transport planning and designs and facility designs (including T1s, DS3s, OCn, DWDM and microwave connectivity) for the NFL market.Led teams of provisioning and transport network engineers during NFL’s UMTS and GSM technology conversions. Designed transport architecture then planned and organized workload for the team.  Project managed hierarchy system turn-up.Designed, sized, and implemented the installation of various MTSO Digital Cross-Connect Systems (Tellabs and Alcatel) and GPS timing system.Used least cost routing and routing redundancy principles.Worked with the interconnect group on all trunking plans and advised on transport issues.Team leader to provisioning and CPDO junior engineers. Ensured that orders and path designs were done accurately.  Trained them on the NFL transport network.Developed the NFL Cingular/ATT Wireless cell site integration transport plan.  Plan included over 2000 cell sites and seven MTSOs. Worked with project managers in ensuring that transport capacity was available to meet all BTS rehome timelines.Designed and implemented many fiber SONET rings with various LECs.Designed transport footprint for the turn-up of three new MTSOs.  This included placement of DACCS, ATM nodes, Telco SONET ring nodes, DWDM inter-MTSO nodes and all associated electrical and optical patch panels. Worked closely with Operations and vendor personnel to resolve any facilities issues and insured that schedule was met.Published microwave enhancement plans for NFL to insure capacity available for GSM and to eliminate single points of failure."
 
     }
 
@@ -36,6 +37,7 @@ var work =
 
   $("#workExperience").append(HTMLworkStart);
   var formattedworkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+  var formattedworkEmployer = formattedworkEmployer.replace("#", "https://att.com");
   var formattedworkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
   var employerInfo = formattedworkEmployer + formattedworkTitle;
   var formattedworkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
@@ -64,7 +66,7 @@ var projects =
        "title": "Portfolio",
        "dates": "2016",
        "description": " Porfolio page using HTML and CSS",
-       "images": ["images/197x148.gif", "images/197x148.gif"]
+       "images": ["images/data.jpg", "images/data2.jpg"]
 
      },
 
@@ -72,7 +74,7 @@ var projects =
        "title": "Online Resume",
        "dates": "2016",
        "description": " online resume using javascript and Jquery",
-       "images": ["images/197x148.gif", "images/197x148.gif"]
+       "images": ["images/networking.png", "images/networking2.png"]
 
      }
 
@@ -82,33 +84,33 @@ var projects =
 
     {
 
-  for (project in projects.projects)
-  {
+      for (project in projects.projects)
+     {
 
-     $("#projects").append(HTMLprojectStart);
+       $("#projects").append(HTMLprojectStart);
 
-     var formattedprojectTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
-     $(".project-entry:last").append(formattedprojectTitle);
-     var formattedprojectDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
-     $(".project-entry:last").append(formattedprojectDates);
-     var formattedprojectDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
-     $(".project-entry:last").append(formattedprojectDescription);
+       var formattedprojectTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+       var formattedprojectTitle = formattedprojectTitle.replace("#", "https://github.com");
 
-     if (projects.projects[project].images.length > 0){
+       $(".project-entry:last").append(formattedprojectTitle);
+       var formattedprojectDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+       $(".project-entry:last").append(formattedprojectDates);
+       var formattedprojectDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+       $(".project-entry:last").append(formattedprojectDescription);
 
-        for (image in projects.projects[project].images){
+       if (projects.projects[project].images.length > 0){
 
-     	var formattedprojectImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
-        $(".project-entry:last").append(formattedprojectImage);
-     }
+          for (image in projects.projects[project].images){
 
-  }
+     	  var formattedprojectImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+          $(".project-entry:last").append(formattedprojectImage);
+          }
 
+        }
 
-  }
+       }
 
- }
-
+    }
 
 }
 
@@ -145,8 +147,6 @@ var bio =
      var formattedHTMLlocation = HTMLlocation.replace("%data%",bio.contacts.location);
 
 
-     //$("#topContacts").append(formattedHTMLmobile,formattedHTMLemail,formattedHTMLgithub,formattedHTMLlocation);
-
      $("#header").prepend(formattedRole);
      $("#header").prepend(formattedName);
      $("#topContacts").prepend(formattedHTMLlocation);
@@ -155,7 +155,6 @@ var bio =
      $("#topContacts").prepend(formattedHTMLmobile);
      $("#header").append(formattedbioPic);
      $("#header").append(formattedwelcomeMsg);
-
 
 
      if (bio.skills.length > 0)
@@ -171,8 +170,6 @@ var bio =
 
     }
 
-
-    //$("#topContacts").prepend(formattedHTMLmobile);
 
     $("#footerContacts").append(formattedHTMLmobile);
     $("#footerContacts").append(formattedHTMLemail);
@@ -221,7 +218,7 @@ var education =
     	"title": "JavaScript Basics",
   	    "school": "Udacity",
   	    "dates": "2016",
-  	    "url": "https://www.udacity.com/nanodegree"
+  	    "url": "https://www.udacity.com/course/javascript-basics--ud804"
 
       },
 
@@ -272,6 +269,7 @@ var education =
          var formattedonlineDates = HTMLonlineDates.replace("%data%",education.onlineCourses[course].dates);
          $(".education-entry:last").append(formattedonlineDates);
          var formattedonlineURL = HTMLonlineURL.replace("%data%",education.onlineCourses[course].url);
+         var formattedonlineURL = formattedonlineURL.replace("#",education.onlineCourses[course].url);
          $(".education-entry:last").append(formattedonlineURL);
 
 
@@ -284,21 +282,6 @@ var education =
 }
 
 
-
-/*function inName(name){
-
-nameArray=name.trim().split(" ");
-console.log(nameArray);
-
- return( nameArray[0].toLowerCase()+nameArray[1].toUppperCase());
-
-}
-
-$("#main").append(internationalizeButton);
-
-inName(bio.name);
-
-*/
 
 education.display();
 
