@@ -28,7 +28,7 @@ var work =
   ],
 
 
-  "display": function()
+  display: function()
 
   {
 
@@ -80,7 +80,7 @@ var projects =
 
     ],
 
-    "display": function()
+    display: function()
 
     {
 
@@ -134,7 +134,7 @@ var bio =
 
     "biopic": "images/fry.jpg",
 
-    "display":function()
+    display:function()
 
     {
      var formattedName = HTMLheaderName.replace("%data%",bio.name);
@@ -193,7 +193,8 @@ var education =
   	        "location": "Stony Brook, NY",
   	        "degree": "Bachelors",
   	        "majors": ["Electrical Engineering"],
-  	        "dates" :"1988"
+  	        "dates" :"1988",
+  	        "url" : "http://www.stonybrook.edu"
         },
 
         {
@@ -201,7 +202,8 @@ var education =
   	        "location": "Syracuse, NY",
   	        "degree": "Masters",
   	        "majors": ["Electrical Engineering"],
-  	        "dates":"1995"
+  	        "dates":"1995",
+  	        "url" : "http://www.syr.edu"
         },
 
         {
@@ -209,7 +211,8 @@ var education =
   	        "location": "Gainesville, FL",
   	        "degree": "Masters",
   	        "majors": ["Business Administration"],
-  	        "dates":"2004"
+  	        "dates":"2004",
+  	        "url" : "http://www.ufl.edu"
         }
 
    ],
@@ -217,7 +220,7 @@ var education =
     "onlineCourses": [{
     	"title": "JavaScript Basics",
   	    "school": "Udacity",
-  	    "dates": "2016",
+  	    "date": "2016",
   	    "url": "https://www.udacity.com/course/javascript-basics--ud804"
 
       },
@@ -225,7 +228,7 @@ var education =
       {
         "title": "Front End Web Developer Nano Degree",
   	    "school": "Udacity",
-  	    "dates": "2016",
+  	    "date": "2016",
   	    "url": "https://www.udacity.com/nanodegree"
 
       }
@@ -233,15 +236,17 @@ var education =
    ],
 
 
-    "display": function()
+    display: function()
 
     {
+
 
       for (school in education.schools)
       {
 
          $("#education").append(HTMLschoolStart);
          var formattedschoolName = HTMLschoolName.replace("%data%",education.schools[school].name);
+         var formattedschoolName = formattedschoolName.replace("#",education.schools[school].url);
          var formattedschoolDegree = HTMLschoolDegree.replace("%data%",education.schools[school].degree);
          var schoolInfo = formattedschoolName + formattedschoolDegree;
          $(".education-entry:last").append(schoolInfo);
@@ -253,7 +258,7 @@ var education =
          $(".education-entry:last").append(formattedschoolMajor);
 
 
-      }
+      };
 
          $("#education").append(HTMLonlineClasses);
 
@@ -266,7 +271,7 @@ var education =
          var formattedonlineSchool = HTMLonlineSchool.replace("%data%",education.onlineCourses[course].school);
          var onlineSchoolinfo = formattedonlineTitle + formattedonlineSchool;
          $(".education-entry:last").append(onlineSchoolinfo);
-         var formattedonlineDates = HTMLonlineDates.replace("%data%",education.onlineCourses[course].dates);
+         var formattedonlineDates = HTMLonlineDates.replace("%data%",education.onlineCourses[course].date);
          $(".education-entry:last").append(formattedonlineDates);
          var formattedonlineURL = HTMLonlineURL.replace("%data%",education.onlineCourses[course].url);
          var formattedonlineURL = formattedonlineURL.replace("#",education.onlineCourses[course].url);
@@ -280,7 +285,6 @@ var education =
 
 
 }
-
 
 
 education.display();
