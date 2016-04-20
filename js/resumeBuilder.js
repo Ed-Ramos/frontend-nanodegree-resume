@@ -240,8 +240,8 @@ var education =
 
     {
 
+      for(var school=0; school<education.schools.length; school++)
 
-      for (school in education.schools)
       {
 
          $("#education").append(HTMLschoolStart);
@@ -258,12 +258,11 @@ var education =
          $(".education-entry:last").append(formattedschoolMajor);
 
 
-      };
+      }
 
          $("#education").append(HTMLonlineClasses);
 
-      for (course in education.onlineCourses)
-
+        for(var course=0; course<education.onlineCourses.length; course++)
        {
 
          $("#education").append(HTMLschoolStart);
@@ -276,7 +275,6 @@ var education =
          var formattedonlineURL = HTMLonlineURL.replace("%data%",education.onlineCourses[course].url);
          var formattedonlineURL = formattedonlineURL.replace("#",education.onlineCourses[course].url);
          $(".education-entry:last").append(formattedonlineURL);
-
 
        }
 
